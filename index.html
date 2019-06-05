@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Rakkas&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <title>Dungeon Test 1.0</title>
+</head>
+
+<body>
+    <div class="popup"id="introPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>Welcome! Please assign your attribute points and choose a name.</h2>
+            </div>
+            <hr>
+            <div class="popup-name">
+                <form action="charCreate">
+                    <h3>Name of your hero : </h3><input type="text" class="form-control" name="" id="inputName">
+                </form>
+            </div>
+            <div class="popup-attrib">
+                <h3>You have <strong id="attrib-points" type="number">10</strong> points remaining.</h3>
+                <hr>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6">
+                        <h3 id="str-help">Strength</h3>
+                    </div>
+                        <div class="col-sm-6 increment-select">
+                            <span>
+                                <a type="button">
+                                    <img src="images/buttondecrease.png" class="input-Down" id="str-down">
+                                </a>
+                            </span>
+                            <p type="text" id="quantityStr" name="quantity" class="quantity"
+                                value="4" min="1" max="100" disabled>4</p>
+
+                            <span>
+                                <a type="button">
+                                    <img src="images/buttonincrease.png"class="input-Up" id="str-up">
+                                </a>
+                            </span>
+                        </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6">
+                        <h3 id="agil-help">Agility</h3>
+                    </div>
+                        <div class="col-sm-6 increment-select">
+                            <span>
+                                <a type="button">
+                                    <img src="images/buttondecrease.png" class="input-Down" id="agi-down">
+                                </a>
+                            </span>
+                            <p type="text" id="quantityAgil" name="quantity" class=" quantity"
+                                value="4" min="1" max="100" disabled>4
+                            </p>
+                            <span>
+                                <a type="button">
+                                    <img src="images/buttonincrease.png"class="input-Up" id="agi-up">
+                                </a>
+                            </span>
+                        </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6">
+                        <h3 id="luck-help">Luck</h3>
+                    </div>
+                        <div class="col-sm-6 increment-select">
+                            <span>
+                                <a type="button">
+                                    <img src="images/buttondecrease.png" class="input-Down" id="luck-down">
+                                </a>
+                            </span>    
+                            <p type="text" id="quantityLuck" name="quantity" class=" quantity"
+                                value="4" min="1" max="100" disabled>4
+                            </p>
+                            <span>
+                                <a type="button">
+                                    <img src="images/buttonincrease.png"class="input-Up">
+                                </a>
+                            </span>
+                        </div>
+                </div>
+            </div>
+            <div class="popup-footer">
+                    <button type="button" class="btn btn-dark btn-lg btn-popupAccept">Reset</button>
+                    <button type="button" class="btn btn-dark btn-lg btn-popupReset" id="setAttrib">Accept and Begin!</button>
+            </div>
+        </div>
+
+    </div>
+            
+        <div class="container">
+            <div class="main-header" id='room-name'>Room Title
+            </div>
+            <div class="container-fluid game-display">
+
+            </div>
+            <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="/index.html">Dungeon 1.0</a>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Player<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inventory</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Map</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container combat-log">
+                <div class="card">
+                    <row class="card-header bg-dark">Combat Log</row>
+                    <form>
+                        <div class="form-group">
+                            <label for="combat-log"></label>
+                            <textarea class="form-control" rows="5" id="combat-log"
+                                disabled>Combat text displayed here.</textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+
+
+</html>
