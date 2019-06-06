@@ -6,14 +6,17 @@ let attribPoints = parseInt(document.getElementById('attrib-points').textContent
 let strValue = parseInt(document.getElementById('quantityStr').textContent);
 let agiValue = parseInt(document.getElementById('quantityAgil').textContent);
 let luckValue = parseInt(document.getElementById('quantityLuck').textContent);
+let intValue = parseInt(document.getElementById('quantityInt').textContent);
+
 
 class Player {
-  constructor(name, strength, agility, luck, hp, level) {
+  constructor(name, strength, agility, luck, hp, int, level) {
     this.name = name;
     this.strength = strength;
     this.agility = agility;
     this.luck = luck;
     this.hp = this.strength + 50;
+    this.int = int;
     this.attack = this.agility + 0.5 * this.luck;
     this.attackPower = this.strength + 0.5 * this.luck;
     this.dodge = this.agility + this.luck;
@@ -142,6 +145,10 @@ class UI {
   updateLuck() {
     document.getElementById('quantityLuck').textContent = luckValue;
   }
+
+  updateInt() {
+    document.getElementById('quantityInt').textContent = intValue;
+  }
 }
 
 // event listeners
@@ -149,7 +156,7 @@ class UI {
 document.getElementById('setAttrib').addEventListener('click', function(e) {
   const inputName = document.getElementById('inputName').value;
 
-  playerOne = new Player(inputName, strValue, agiValue, luckValue, strValue, 1);
+  playerOne = new Player(inputName, strValue, agiValue, luckValue, strValue, intValue, 1);
 
   // enemy = new Player('enemy', inputStrength, inputAgility, inputLuck, inputStrength);
 
@@ -172,7 +179,7 @@ window.addEventListener('DOMContentLoaded',() =>{
 
 
 
-document.querySelector('.popup-content').addEventListener('click', (e) =>{
+document.querySelector('.popup-content').addEventListener('click', (e) => {
 ui = new UI;
   if(e.target.className === 'input-Down'){
     if(e.target.id === 'str-down') {
@@ -182,22 +189,29 @@ ui = new UI;
         ui.updateAttribPoints();
         ui.updateStrength();
       }
-    } else if (e.target.id === 'agi-down') {
+    } else if(e.target.id === 'agi-down') {
         if(agiValue > 1){
           agiValue -= 1;
           attribPoints +=1
           ui.updateAttribPoints();
           ui.updateAgi();
       }
-    } else {
+    } else if(e.target.id === 'luck-down') {
         if(luckValue > 1){
           luckValue -= 1;
           attribPoints +=1
           ui.updateAttribPoints();
           ui.updateLuck();
-      }
+        }  
+    } else if(e.target.id === 'int-down') {
+          if (intValue > 1){
+          intValue -= 1;
+          attribPoints +=1
+          ui.updateAttribPoints();
+          ui.updateInt();
+        }
     }
-  }
+  }  
   if(e.target.className === 'input-Up'){
     if(e.target.id === 'str-up') {
       if(attribPoints > 0){
@@ -206,24 +220,30 @@ ui = new UI;
         ui.updateAttribPoints();
         ui.updateStrength();
       }
-    } else if (e.target.id === 'agi-up') {
+    } else if(e.target.id === 'agi-up') {
         if(attribPoints > 0){
           agiValue += 1;
           attribPoints -=1
           ui.updateAttribPoints();
           ui.updateAgi();
       }
-    } else {
+    } else if(e.target.id === 'luck-up') {
         if(attribPoints > 0){
           luckValue += 1;
           attribPoints -=1
           ui.updateAttribPoints();
           ui.updateLuck();
-      }
+        }  
+    } else {
+        if(attribPoints > 0){
+          intValue += 1;
+          attribPoints -=1
+          ui.updateAttribPoints();
+          ui.updateInt();
+        } 
     }
   }
 });
-
 
 // document.querySelector('.btn-attack').addEventListener('click', function(e) {
 //   game.attackCheck(e);

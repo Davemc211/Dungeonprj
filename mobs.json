@@ -1,0 +1,42 @@
+[
+{
+    "name" : "Bat",
+    "class" : 1
+},
+{
+    "name" : "Rat",
+    "class" : 1
+},
+{
+    "name" : "Slime",
+    "class" : 2
+},
+{
+    "name" : "Kobold",
+    "class" : 2
+},
+{
+    "name" : "Orc Fighter",
+    "class" : 3
+},
+{
+    "name" : "Orc Archer",
+    "class" : 3
+},
+{
+    "name" : "Orc Champion",
+    "class" : 4
+},
+{
+    "name" : "Griphon",
+    "class" : 4
+},
+{
+    "name" : "Hydra",
+    "class" : 5
+},
+{
+    "name" : "Orc Leader",
+    "class" : 5
+}
+]

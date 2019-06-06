@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Rakkas&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jura|Orbitron&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -27,10 +27,10 @@
             <div class="popup-header">
                 <h2>Welcome! Please assign your attribute points and choose a name.</h2>
             </div>
-            <hr>
-            <div class="popup-name">
+            <!-- <hr> -->
+            <div class="popup-name p-3">
                 <form action="charCreate">
-                    <h3>Name of your hero : </h3><input type="text" class="form-control" name="" id="inputName">
+                    <h3><strong>Name of your explorer : </strong></h3><input type="text" class="form-control" name="" id="inputName">
                 </form>
             </div>
             <div class="popup-attrib">
@@ -78,6 +78,26 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-sm-6">
+                        <h3 id="int-help">Intelligence</h3>
+                    </div>
+                        <div class="col-sm-6 increment-select">
+                            <span>
+                                <a type="button">
+                                    <img src="images/buttondecrease.png" class="input-Down" id="int-down">
+                                </a>
+                            </span>
+                            <p type="text" id="quantityInt" name="quantity" class=" quantity"
+                                value="4" min="1" max="100" disabled>4
+                            </p>
+                            <span>
+                                <a type="button">
+                                    <img src="images/buttonincrease.png"class="input-Up" id="int-up">
+                                </a>
+                            </span>
+                        </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6">
                         <h3 id="luck-help">Luck</h3>
                     </div>
                         <div class="col-sm-6 increment-select">
@@ -91,7 +111,7 @@
                             </p>
                             <span>
                                 <a type="button">
-                                    <img src="images/buttonincrease.png"class="input-Up">
+                                    <img src="images/buttonincrease.png"class="input-Up" id="luck-up">
                                 </a>
                             </span>
                         </div>
@@ -106,9 +126,11 @@
     </div>
             
         <div class="container">
-            <div class="main-header" id='room-name'>Room Title
+            <div class="main-header font-weight-bold" id='room-name'>
+            </h3>The Bridge</h3>
             </div>
             <div class="container-fluid game-display">
+                <img src="/images/derelict-warehouse-1526013-1280x960.jpg">
 
             </div>
             <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
