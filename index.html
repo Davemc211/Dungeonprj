@@ -125,14 +125,27 @@
 
     </div>
             
-        <div class="container">
-            <div class="main-header font-weight-bold" id='room-name'>
-            </h3>The Bridge</h3>
+        <div class="container mx-auto">
+          <div class="row game-viewport mx-auto">
+            <div class="game-display mx-auto">
+                <img src="/images/derelict-warehouse-1526013-1280x960.jpg" class="img-responsive">
+                    <div class="card" id="room-desc">
+                        <p>Bridge</p>
+                    </div>
             </div>
-            <div class="container-fluid game-display">
-                <img src="/images/derelict-warehouse-1526013-1280x960.jpg">
-
-            </div>
+            <div class="container combat-log">
+                <div class="card">
+                    <row class="card-header bg-dark">Combat Log</row>
+                    <form>
+                        <div class="form-group">
+                            <label for="combat-log"></label>
+                            <textarea class="form-control" rows="5" id="combat-log"
+                                disabled>Combat text displayed here.</textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>   
+        </div>
             <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -156,7 +169,7 @@
                     </ul>
                 </div>
             </nav>
-            <div class="container combat-log">
+            <!-- <div class="container combat-log mx-auto">
                 <div class="card">
                     <row class="card-header bg-dark">Combat Log</row>
                     <form>
@@ -167,7 +180,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
